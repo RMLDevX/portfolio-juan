@@ -236,7 +236,7 @@ export default function Home() {
                       onClick={() => {
                         // Create a temporary link element
                         const link = document.createElement('a');
-                        link.href = '/certificates/Juan Romulo Resume.pdf'; // Path to your PDF in public folder
+                        link.href = '/certificates/Resume.pdf'; // Path to your PDF in public folder
                         link.download = 'Resume.pdf'; // Default filename for download
                         document.body.appendChild(link);
                         link.click();
