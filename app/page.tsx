@@ -3,13 +3,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FaCode, FaLaptopCode, FaCertificate, FaProjectDiagram, FaEnvelope, FaGithub, FaLinkedin, FaBars, FaTimes, FaChevronRight, FaJava, FaHtml5, FaCss3Alt, FaJs, FaUser, FaWordpress, FaFigma, FaLinux, FaShieldAlt, FaCloud, FaUsers, FaLightbulb, FaClock } from 'react-icons/fa'
+import { FaCode, FaLaptopCode, FaCertificate, FaProjectDiagram, FaEnvelope, FaGithub, FaLinkedin, FaBars, FaTimes, FaChevronRight, FaJava, FaHtml5, FaCss3Alt, FaJs, FaUser, FaWordpress, FaFigma, FaLinux, FaShieldAlt, FaCloud, FaUsers, FaLightbulb, FaClock, FaDatabase } from 'react-icons/fa'
 import { SiTailwindcss, SiCanva, SiAdobe } from 'react-icons/si'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 // Import your profile image
-import profileImage from '../public/Image/Logo.png' // Adjust this path based on your actual file structure
+import profileImage from '../public/Image/Profile.png' // Adjust this path based on your actual file structure
 
 const sectionVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -17,17 +17,17 @@ const sectionVariant = {
 }
 
 const technicalSkills = [
-  { name: 'Java', icon: <FaJava className="w-6 h-6 text-red-500" />, level: 60 },
+  { name: 'Java', icon: <FaJava className="w-6 h-6 text-red-500" />, level: 30 },
   { name: 'JavaScript', icon: <FaJs className="w-6 h-6 text-yellow-500" />, level: 35 },
-  { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-6 h-6 text-teal-500" />, level: 65 },
+  { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-6 h-6 text-teal-500" />, level: 35 },
   { name: 'WordPress', icon: <FaWordpress className="w-6 h-6 text-blue-500" />, level: 70 },
-  { name: 'HTML & CSS', icon: <><FaHtml5 className="w-6 h-6 text-orange-500" /><FaCss3Alt className="w-6 h-6 text-blue-500" /></>, level: 90 },
-  { name: 'Git/GitHub', icon: <FaGithub className="w-6 h-6 text-gray-800" />, level: 50 },
+  { name: 'HTML & CSS', icon: <><FaHtml5 className="w-6 h-6 text-orange-500" /><FaCss3Alt className="w-6 h-6 text-blue-500" /></>, level: 60 },
+  { name: 'SQL', icon: <FaDatabase className="w-6 h-6 text-blue-600" />, level: 40 },
   { name: 'Figma', icon: <FaFigma className="w-6 h-6 text-purple-500" />, level: 75 },
   { name: 'Canva', icon: <SiCanva className="w-6 h-6 text-blue-400" />, level: 85 },
   { name: 'System Troubleshooting', icon: <FaLinux className="w-6 h-6 text-gray-700" />, level: 80 },
   { name: 'Cybersecurity Basics', icon: <FaShieldAlt className="w-6 h-6 text-green-500" />, level: 70 },
-  { name: 'Virtualization', icon: <FaCloud className="w-6 h-6 text-indigo-500" />, level: 65 },
+  { name: 'Virtualization', icon: <FaCloud className="w-6 h-6 text-indigo-500" />, level: 55 },
   { name: 'Photoshop', icon: <SiAdobe className="w-6 h-6 text-blue-600" />, level: 70 },
 ]
 
@@ -215,87 +215,87 @@ export default function Home() {
                 />
               </motion.div>
 
-{/* Intro Text */}
-<div className="flex-1 text-center lg:text-left">
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.3 }}
-  >
-    <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
-      Hi, I'm <span className="font-semibold text-blue-600">Juan</span>
-    </h1>
-    <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-      A passionate <span className="text-blue-600 font-medium">4th Year IT Student</span> seeking On-the-Job Training opportunities where I can apply my technical knowledge, enhance my practical skills, and gain real-world experience in web technologies and various areas of the IT industry.
-    </p>
-    
-    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => {
-          // Create a temporary link element
-          const link = document.createElement('a');
-          link.href = '/certificates/Juan Romulo Resume.pdf'; // Path to your PDF in public folder
-          link.download = 'Resume.pdf'; // Default filename for download
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }}
-        className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all shadow-sm hover:shadow flex items-center gap-2"
-      >
-        <svg 
-          className="w-5 h-5" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24" 
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-          />
-        </svg>
-        Download CV
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={() => scrollToSection('skills')}
-        className="px-8 py-3 border border-gray-300 rounded-full font-medium hover:bg-gray-50 transition-all"
-      >
-        My Skills
-      </motion.button>
-    </div>
+              {/* Intro Text */}
+              <div className="flex-1 text-center lg:text-left">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-light mb-6">
+                    Hi, I'm <span className="font-semibold text-blue-600">Juan</span>
+                  </h1>
+                  <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+                    A passionate <span className="text-blue-600 font-medium">4th Year IT Student</span> seeking On-the-Job Training opportunities where I can apply my technical knowledge, enhance my practical skills, and gain real-world experience in web technologies and various areas of the IT industry.
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => {
+                        // Create a temporary link element
+                        const link = document.createElement('a');
+                        link.href = '/certificates/Juan Romulo Resume.pdf'; // Path to your PDF in public folder
+                        link.download = 'Resume.pdf'; // Default filename for download
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                      }}
+                      className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-all shadow-sm hover:shadow flex items-center gap-2"
+                    >
+                      <svg 
+                        className="w-5 h-5" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                        />
+                      </svg>
+                      Download CV
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={() => scrollToSection('skills')}
+                      className="px-8 py-3 border border-gray-300 rounded-full font-medium hover:bg-gray-50 transition-all"
+                    >
+                      My Skills
+                    </motion.button>
+                  </div>
 
                   {/* Quick Stats */}
-<motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ delay: 0.6 }}
-  className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl"
->
-  {[
-    { label: 'OJT Availability', value: 'Immediate' },
-    { label: 'Specialization', value: 'IT Solutions' },
-    { label: 'Technical Area', value: 'System Analysis' },
-    { label: 'Looking For', value: 'Experience' },
-  ].map((stat, index) => (
-    <div key={stat.label} className="text-center">
-      <motion.p
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ delay: 0.2 + index * 0.1 }}
-        className="text-xl font-semibold text-blue-600"
-      >
-        {stat.value}
-      </motion.p>
-      <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
-    </div>
-  ))}
-</motion.div>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl"
+                  >
+                    {[
+                      { label: 'OJT Availability', value: 'Immediate' },
+                      { label: 'Specialization', value: 'IT Solutions' },
+                      { label: 'Technical Area', value: 'System Analysis' },
+                      { label: 'Looking For', value: 'Experience' },
+                    ].map((stat, index) => (
+                      <div key={stat.label} className="text-center">
+                        <motion.p
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          transition={{ delay: 0.2 + index * 0.1 }}
+                          className="text-xl font-semibold text-blue-600"
+                        >
+                          {stat.value}
+                        </motion.p>
+                        <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                      </div>
+                    ))}
+                  </motion.div>
                 </motion.div>
               </div>
             </motion.div>
@@ -393,7 +393,6 @@ export default function Home() {
                               className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
                             />
                           </div>
-                          <p className="text-right text-sm text-gray-500 mt-1">{skill.level}%</p>
                         </div>
                       </div>
                     </motion.div>
@@ -568,7 +567,7 @@ export default function Home() {
                 </motion.div>
               </div>
 
-                           {/* Certificates */}
+              {/* Certificates */}
               <div>
                 <h3 className="text-2xl font-semibold mb-8 text-center text-gray-700">Certificates</h3>
                 <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -670,79 +669,79 @@ export default function Home() {
         </section>
 
         {/* SECTION 6: CONTACT */}
-<section id="contact" className="min-h-screen flex items-center px-6 py-20 bg-gray-50/50">
-  <div className="max-w-4xl mx-auto w-full">
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={sectionVariant}
-      transition={{ duration: 0.8 }}
-      className="text-center"
-    >
-      <div className="inline-block p-4 rounded-full bg-blue-100 mb-8">
-        <FaEnvelope className="w-12 h-12 text-blue-600" />
-      </div>
-      
-      <h2 className="text-3xl md:text-4xl font-light mb-6">
-        Let's <span className="font-semibold text-blue-600">Connect</span>
-      </h2>
-      
-      <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-        I'm actively seeking On-the-Job Training opportunities and would love to connect 
-        with companies looking for dedicated IT students ready to learn and contribute.
-      </p>
+        <section id="contact" className="min-h-screen flex items-center px-6 py-20 bg-gray-50/50">
+          <div className="max-w-4xl mx-auto w-full">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={sectionVariant}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="inline-block p-4 rounded-full bg-blue-100 mb-8">
+                <FaEnvelope className="w-12 h-12 text-blue-600" />
+              </div>
+              
+              <h2 className="text-3xl md:text-4xl font-light mb-6">
+                Let's <span className="font-semibold text-blue-600">Connect</span>
+              </h2>
+              
+              <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
+                I'm actively seeking On-the-Job Training opportunities and would love to connect 
+                with companies looking for dedicated IT students ready to learn and contribute.
+              </p>
 
-      <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
-        <motion.a
-          whileHover={{ scale: 1.05, y: -5 }}
-          whileTap={{ scale: 0.95 }}
-          href="mailto:your.juanromulo016@gmail.com"
-          className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
-        >
-          <FaEnvelope className="w-8 h-8 text-blue-600 mb-4 mx-auto group-hover:scale-110 transition-transform" />
-          <span className="font-medium text-gray-800 block mb-2">Email</span>
-          <p className="text-gray-600 text-sm">juanromulo016@gmail.com</p>
-        </motion.a>
+              <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-2xl mx-auto">
+                <motion.a
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="mailto:juanromulo016@gmail.com"
+                  className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
+                >
+                  <FaEnvelope className="w-8 h-8 text-blue-600 mb-4 mx-auto group-hover:scale-110 transition-transform" />
+                  <span className="font-medium text-gray-800 block mb-2">Email</span>
+                  <p className="text-gray-600 text-sm">juanromulo016@gmail.com</p>
+                </motion.a>
 
-        <motion.a
-          whileHover={{ scale: 1.05, y: -5 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://github.com/RMLDevX"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
-        >
-          <FaGithub className="w-8 h-8 text-gray-800 mb-4 mx-auto group-hover:scale-110 transition-transform" />
-          <span className="font-medium text-gray-800 block mb-2">GitHub</span>
-          <p className="text-gray-600 text-sm">@RMLDevX</p>
-        </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://github.com/RMLDevX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
+                >
+                  <FaGithub className="w-8 h-8 text-gray-800 mb-4 mx-auto group-hover:scale-110 transition-transform" />
+                  <span className="font-medium text-gray-800 block mb-2">GitHub</span>
+                  <p className="text-gray-600 text-sm">@RMLDevX</p>
+                </motion.a>
 
-        <motion.a
-          whileHover={{ scale: 1.05, y: -5 }}
-          whileTap={{ scale: 0.95 }}
-          href="https://www.linkedin.com/in/juan-gabriel-romulo-5aa097395/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
-        >
-          <FaLinkedin className="w-8 h-8 text-blue-700 mb-4 mx-auto group-hover:scale-110 transition-transform" />
-          <span className="font-medium text-gray-800 block mb-2">LinkedIn</span>
-          <p className="text-gray-600 text-sm">Juan Romulo - IT Student</p>
-        </motion.a>
-      </div>
+                <motion.a
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  whileTap={{ scale: 0.95 }}
+                  href="https://www.linkedin.com/in/juan-gabriel-romulo-5aa097395/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all"
+                >
+                  <FaLinkedin className="w-8 h-8 text-blue-700 mb-4 mx-auto group-hover:scale-110 transition-transform" />
+                  <span className="font-medium text-gray-800 block mb-2">LinkedIn</span>
+                  <p className="text-gray-600 text-sm">Juan Romulo - IT Student</p>
+                </motion.a>
+              </div>
 
-      <div className="pt-8 border-t border-gray-200">
-        <p className="text-gray-500">
-         Ready to Learn | Eager to Contribute | Committed to Growth
-        </p>
-        <p className="mt-2 text-sm text-gray-400">
-          © {new Date().getFullYear()} Juan. All rights reserved.
-        </p>
-      </div>
-    </motion.div>
-  </div>
-</section>
+              <div className="pt-8 border-t border-gray-200">
+                <p className="text-gray-500">
+                 Ready to Learn | Eager to Contribute | Committed to Growth
+                </p>
+                <p className="mt-2 text-sm text-gray-400">
+                  © {new Date().getFullYear()} Juan. All rights reserved.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </main>
     </>
   )
